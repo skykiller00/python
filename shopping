@@ -13,6 +13,7 @@ if money.isdigit():
             else:
                 print('您购买的商品有:',b )
                 print('您的余额为:',money)
+                print('欢迎您下次光临!')
                 break
         else:
             num = int (num)           
