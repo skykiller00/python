@@ -1,0 +1,29 @@
+a = [('苹果8',7999),('小米',1999),('华为',2399),('OPPO',1699),('vivo',2399),]
+for index,item in enumerate(a):
+    print(index,item)   
+money = input('您的工资是:')
+b = []
+if money.isdigit():
+    money = int(money)
+    while True:
+        num = input('请输入想购买物品的编号,退出请按Q/q')
+        if num == 'Q' or num == 'q':
+            if b == []:
+                print('您未购买任何物品,欢迎您下次光临!')
+            else:
+                print('您购买的商品有:',b )
+                print('您的余额为:',money)
+                break
+        else:
+            num = int (num)           
+            if num >= 0 and num < 5:
+                if money < int(a[num][1]):
+                    print('您的余额不足以购买该物品,请重新选择或退出!')
+                else:
+                    b.append(a[num])
+                    money = money - int(a[num][1])
+                    print(a[num][0],'添加到购物车')            
+            else:
+                print('您输入的物品编号有误,请您重输入!')
+else:
+    print('您输入的数据有误,请输入正确的数据!')
